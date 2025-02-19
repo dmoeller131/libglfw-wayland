@@ -12,6 +12,8 @@ stdenv.mkDerivation rec {
   };
 
   nativeBuildInputs = [];
+  # Skip unpackPhase, as we don't need to unpack a binary file
+  unpackPhase = ":";
 
   installPhase = ''
     mkdir -p $out/lib
